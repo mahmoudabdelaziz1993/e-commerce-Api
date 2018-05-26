@@ -1,0 +1,553 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"u",
+				"user"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"user",
+				"$user〔variable〕"
+			],
+			[
+				"t",
+				"$token〔variable〕"
+			],
+			[
+				"de",
+				"delete"
+			],
+			[
+				"st",
+				"store"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"product",
+				"$product〔variable〕"
+			],
+			[
+				"ret",
+				"ret\treturn"
+			],
+			[
+				"sell",
+				"$seller〔variable〕"
+			],
+			[
+				"pro",
+				"product"
+			],
+			[
+				"i",
+				"$id〔variable〕"
+			],
+			[
+				"tr",
+				"transactions"
+			],
+			[
+				"val",
+				"validator〔function〕"
+			],
+			[
+				"va",
+				"$valid〔variable〕"
+			],
+			[
+				"pr",
+				"$product〔variable〕"
+			],
+			[
+				"req",
+				"$request〔variable〕"
+			],
+			[
+				"requ",
+				"request〔function〕"
+			],
+			[
+				"ca",
+				"category"
+			],
+			[
+				"a",
+				"all〔function〕"
+			],
+			[
+				"cat",
+				"$category〔variable〕"
+			],
+			[
+				"err",
+				"errorResponse"
+			],
+			[
+				"es",
+				"exceptions"
+			],
+			[
+				"th",
+				"$this〔variable〕"
+			],
+			[
+				"V",
+				"ValidationException"
+			],
+			[
+				"use",
+				"$users〔variable〕"
+			],
+			[
+				"U",
+				"User"
+			],
+			[
+				"mi",
+				"min"
+			],
+			[
+				"res",
+				"response〔function〕"
+			],
+			[
+				"s",
+				"schema"
+			],
+			[
+				"r",
+				"randomElement〔function〕"
+			],
+			[
+				"ra",
+				"randomElement〔function〕"
+			],
+			[
+				"viri",
+				"varified"
+			],
+			[
+				"con",
+				"const"
+			],
+			[
+				"T",
+				"Transaction"
+			],
+			[
+				"R",
+				"Route"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "storage/logs/laravel.log",
+			"settings":
+			{
+				"buffer_size": 1024025,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nnamespace App;\n\n\nuse Illuminate\\Foundation\\Auth\\User as Authenticatable;\nuse Illuminate\\Notifications\\Notifiable;\n\nclass User extends Authenticatable\n{\n    use Notifiable;\n    // define the const \n    const VARIFIED_USER='1';\n    const UNVARIFIED_USER='0';\n\n    const ADMIN_USER='true';\n    const REGULAR_USER='false';\n    protected $table ='users';\n\n\n    \n    /**\n     * The attributes that are mass assignable.\n     *\n     * @var array\n     */\n    protected $fillable = [\n        'name',\n         'email',\n          'password',\n          'varified',\n          \n          'admin',\n    ];\n\n    /**\n     * The attributes that should be hidden for arrays.\n     *\n     * @var array\n     */\n    protected $hidden = [\n        'password', 'remember_token',\n        'varified_token',\n    ];\n    public function isvarified()\n    {\n        # code...\n        return $this->varified==User::VARIFIED_USER;\n    }\n    public function isAdmin()\n    {\n        # code...\n        return $this->admin==User::ADMIN_USER;\n\n    }\n    public static function generateVarificationCode()\n    {\n        # code...\n        return str_random(40);\n    }\n\n}\n",
+			"file": "app/User.php",
+			"file_size": 1131,
+			"file_write_time": 131716946067997618,
+			"settings":
+			{
+				"buffer_size": 1133,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/mail/varifymail.blade.php",
+			"settings":
+			{
+				"buffer_size": 148,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Providers/AppServiceProvider.php",
+			"settings":
+			{
+				"buffer_size": 685,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"intsl",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/xampp/htdocs/rest",
+		"/C/xampp/htdocs/rest/app",
+		"/C/xampp/htdocs/rest/app/Http",
+		"/C/xampp/htdocs/rest/app/Http/Controllers",
+		"/C/xampp/htdocs/rest/app/Mail",
+		"/C/xampp/htdocs/rest/app/Providers",
+		"/C/xampp/htdocs/rest/resources",
+		"/C/xampp/htdocs/rest/resources/views",
+		"/C/xampp/htdocs/rest/resources/views/mail",
+		"/C/xampp/htdocs/rest/routes",
+		"/C/xampp/htdocs/rest/storage",
+		"/C/xampp/htdocs/rest/storage/logs",
+		"/C/xampp/htdocs/rest/tests",
+		"/C/xampp/htdocs/rest/vendor"
+	],
+	"file_history":
+	[
+		"/C/xampp/htdocs/rest/app/Mail/registeruser.php",
+		"/C/xampp/htdocs/rest/resources/views/mail/varifymail.blade.php",
+		"/C/xampp/htdocs/rest/.env",
+		"/C/xampp/htdocs/rest/app/Providers/AppServiceProvider.php",
+		"/C/xampp/htdocs/rest/routes/api.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/UserController.php",
+		"/C/xampp/htdocs/rest/app/User.php",
+		"/C/xampp/htdocs/rest/resources/views/varifymail.balde.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Mail/Mailable.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/SellerProductController.php",
+		"/C/xampp/htdocs/rest/public/img/1.jpeg",
+		"/C/xampp/htdocs/rest/config/filesystems.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/SellerTransactionController.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/BuyerSellerController.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/SellerController.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/CategoryProductController.php",
+		"/C/xampp/htdocs/rest/app/Buyer.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/CategoryController.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/BuyerProductController.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/TransactionSellerController.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/BuyerTransactionController.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/ProductController.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/TransactionController.php",
+		"/C/xampp/htdocs/rest/routes/web.php",
+		"/C/xampp/htdocs/rest/app/Providers/RouteServiceProvider.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Auth/RequestGuard.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Validation/Validator.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Validation/ValidationException.php",
+		"/C/xampp/htdocs/rest/app/Exceptions/Handler.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Contracts/Auth/Guard.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Contracts/Validation/ValidatesWhenResolved.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Contracts/Debug/ExceptionHandler.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Foundation/Validation/ValidatesRequests.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Validation/Factory.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php",
+		"/C/xampp/htdocs/rest/vendor/vlucas/phpdotenv/src/Exception/ValidationException.php",
+		"/C/xampp/htdocs/rest/vendor/league/flysystem/src/Exception.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Contracts/Support/Renderable.php",
+		"/C/xampp/htdocs/rest/app/Http/Controllers/BuyerController.php",
+		"/C/xampp/htdocs/rest/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/rest/database/migrations/2018_05_14_172817_create_products_table.php",
+		"/C/xampp/htdocs/rest/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/xampp/htdocs/rest/app/Transaction.php",
+		"/C/xampp/htdocs/rest/database/factories/ModelFactory.php",
+		"/C/xampp/htdocs/rest/app/Product.php",
+		"/C/xampp/htdocs/rest/database/migrations/2018_05_14_173326_create_transactions_table.php",
+		"/C/xampp/htdocs/rest/config/database.php",
+		"/C/xampp/htdocs/rest/database/migrations/2018_05_14_172938_create_categories_table.php",
+		"/C/xampp/htdocs/rest/app/Seller.php",
+		"/C/xampp/htdocs/rest/app/Category.php",
+		"/C/xampp/htdocs/rest/database/migrations/2018_05_14_172150_create_buyers_table.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php",
+		"/C/xampp/htdocs/rest/vendor/laravel/framework/src/Illuminate/Notifications/Notifiable.php"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"arr.php",
+			"BuyerController"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "storage/logs/laravel.log",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1024025,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 258219.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/User.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1133,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								766,
+								766
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 449.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "resources/views/mail/varifymail.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 148,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								15
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/Providers/AppServiceProvider.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								451,
+								451
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "rest.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 311.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
