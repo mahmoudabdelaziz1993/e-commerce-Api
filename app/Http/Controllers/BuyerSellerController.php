@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 class BuyerSellerController extends Controller
 {
     //
+    function __construct()
+    {
+        $this->middleware('auth:api');
+    }
     public function index($id)
     {
         //

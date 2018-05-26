@@ -13,6 +13,10 @@ class BuyerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+        $this->middleware('auth:api');
+    }
     public function index()
     {
         //
